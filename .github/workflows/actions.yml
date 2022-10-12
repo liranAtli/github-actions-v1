@@ -21,6 +21,6 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: liranAtli/github-actions
-          token: ${{ secrets.my_pat }}
+          token: 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
 
 # pull created -> pushed to master -> copy file -> checkout to new repo and new branch -> paste the file -> open new issue
