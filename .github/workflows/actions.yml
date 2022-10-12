@@ -17,21 +17,10 @@ jobs:
       security-events: write
       statuses: write
     steps:
-      - name: PUSH FILE
-        run: |
-          pwd
-          git clone "https://github.com/liranAtli/github-actions.git"
-          git config --global user.email "my-liran@bot.com"
-          git config --global user.name "my-liran"
-          git fetch
-          git checkout master
-          git branch --set-upstream-to=origin/master
-          git pull
-          ls -al
-          cp ./swagger.json >> openapi.json
-          ls -a
-          git add -A
-          git commit -m "random file"
-          git push
+      - name: Check out my other private repo
+        uses: actions/checkout@master
+        with:
+          repository: liranAtli/github-actions
+          token: ${{ secrets.my_pat }}
 
 # pull created -> pushed to master -> copy file -> checkout to new repo and new branch -> paste the file -> open new issue
