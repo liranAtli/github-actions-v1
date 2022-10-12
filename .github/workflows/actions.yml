@@ -20,7 +20,7 @@ jobs:
       - name: PUSH FILE
         run: |
           pwd
-          git clone git@github.com:liranAtli/github-actions.git"
+          git clone "git@github.com:liranAtli/github-actions.git"
           git config --global user.email "my-liran@bot.com"
           git config --global user.name "my-liran"
           git fetch
