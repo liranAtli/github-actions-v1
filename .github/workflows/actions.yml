@@ -1,9 +1,7 @@
 name: Actions Workflows
 
 on:
-  push:
-    branches:
-      - "master"
+  [pull_request]
 
 jobs:
   run-github-actions:
@@ -14,7 +12,7 @@ jobs:
       - name: Pushes test file
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
         with:
           source_file: "./swagger.json"
           destination_repo: "liranAtli/github-actions"
