@@ -11,7 +11,6 @@ jobs:
       - name: PUSH FILE
         run: |
           pwd
-          ls -a
           git clone git@github.com:liranAtli/github-actions.git"
           git config --global user.email "my-liran@bot.com"
           git config --global user.name "my-liran"
