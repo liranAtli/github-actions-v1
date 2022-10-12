@@ -5,14 +5,16 @@ on:
     branches:
       - "master"
 
-
-
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Copy swagger
-        run: cp $1 $2 $3
-        with:
-          source: "./swagger.json"
-          target: "./openapi.json"
+      - name: Checkout
+        uses: actions/checkout@v2
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
