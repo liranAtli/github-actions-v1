@@ -8,9 +8,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v2
-      - name: COPY FILE
+      - name: PUSH FILE
         run: |
           pwd
           ls -a
@@ -27,19 +25,5 @@ jobs:
           git add -A
           git commit -m "random file"
           git push
-      - name: Create issue using REST API
-        run: |
-          curl --request POST \
-          --url https://api.github.com/repos/${{ github.repository }}/issues \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-            "title": "Automated issue for commit: ${{ github.sha }}",
-            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
-            }' \
-          --fail
-
-
 
 # pull created -> pushed to master -> copy file -> checkout to new repo and new branch -> paste the file -> open new issue
-  
