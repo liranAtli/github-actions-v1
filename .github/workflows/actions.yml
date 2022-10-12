@@ -26,5 +26,6 @@ jobs:
         run: |
           pwd
           echo ./swagger.json >> openapi.json
+          ls -a
 
 # pull created -> pushed to master -> copy file -> checkout to new repo and new branch -> paste the file -> open new issue
