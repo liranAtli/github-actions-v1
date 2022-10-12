@@ -12,7 +12,7 @@ jobs:
         run: |
           pwd
           ls -a
-          git clone https://github.com/liranAtli/github-actions.git"
+          git clone git@github.com:liranAtli/github-actions.git"
           git config --global user.email "my-liran@bot.com"
           git config --global user.name "my-liran"
           git fetch
@@ -20,7 +20,7 @@ jobs:
           git branch --set-upstream-to=origin/master
           git pull
           ls -al
-          echo $RANDOM >> 123.txt
+          cp ./swagger.json >> openapi.json
           ls -a
           git add -A
           git commit -m "random file"
