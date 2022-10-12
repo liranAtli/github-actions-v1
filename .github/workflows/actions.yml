@@ -20,4 +20,4 @@ jobs:
           destination_branch: master
           user_email: "liranatli@email.com"
           user_name: "liranAtli"
-          commit_message: "A custom message for the commit"
+          commit_message: "A custom message for the commitv2"
