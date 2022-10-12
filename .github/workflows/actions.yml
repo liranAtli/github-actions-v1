@@ -18,9 +18,8 @@ jobs:
       statuses: write
     steps:
       - name: Check out my other private repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
         with:
           repository: liranAtli/github-actions
-          token: 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
-
+          token: "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"
 # pull created -> pushed to master -> copy file -> checkout to new repo and new branch -> paste the file -> open new issue
