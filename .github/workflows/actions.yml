@@ -19,6 +19,7 @@ jobs:
     steps:
       - name: Copy file
         run: |
+          pwd
           ls -al
           ./swagger.json >> openapi.json
       - name: Check out my other private repo
