@@ -26,7 +26,8 @@ jobs:
       - name: copy file from current repo
         run: |
           echo ${{ github.event }}
-          ./swagger.json >> openapi.json
+          ls -al
+          ../swagger.json >> openapi.json
           git config --global user.email "my-liran@bot.com"
           git config --global user.name "my-liran"
           git add -A
