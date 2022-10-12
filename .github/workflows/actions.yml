@@ -17,25 +17,26 @@ jobs:
       security-events: write
       statuses: write
     steps:
-      - name: Copy file
+      - name: Create curl
         run: |
-          pwd
-          ls -al
-          ./swagger.json >> openapi.json
-      - name: Check out my other private repo
-        uses: actions/checkout@v3
-        with:
-          repository: liranAtli/github-actions
-          token: ${{ github.token }}
-          ref: ${{ github.event.id }}
-      - name: copy file from current repo
-        run: |
-          echo ${{ github.event.id }}
-          ls -al
-          git config --global user.email "my-liran@bot.com"
-          git config --global user.name "my-liran"
-          git add -A
-          git commit -m "random file"
-          git push
+          curl --request GET \
+          --url https://gw.yad2.io/my-ads/api-docs/swagger.json \
+          --header 'content-type: application/json' \
+          --fail
+      # - name: Check out my other private repo
+      #   uses: actions/checkout@v3
+      #   with:
+      #     repository: liranAtli/github-actions
+      #     token: ${{ github.token }}
+      #     ref: ${{ github.event.id }}
+      # - name: copy file from current repo
+      #   run: |
+      #     echo ${{ github.event.id }}
+      #     ls -al
+      #     git config --global user.email "my-liran@bot.com"
+      #     git config --global user.name "my-liran"
+      #     git add -A
+      #     git commit -m "random file"
+      #     git push
 
 # pull created -> pushed to master -> copy file -> checkout to new repo and new branch -> paste the file -> open new issue
