@@ -22,11 +22,11 @@ jobs:
         with:
           repository: liranAtli/github-actions
           token: ${{ github.token }}
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: copy file from current repo
         run: |
-          pwd
-          echo ./swagger.json >> openapi.json
-          ls -a
+          echo ${{ github.event }}
+          ./swagger.json >> openapi.json
           git config --global user.email "my-liran@bot.com"
           git config --global user.name "my-liran"
           git add -A
