@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "private": true,
+  "projects": {
+    "personal": true,
+    "main": true
+  }
+}
