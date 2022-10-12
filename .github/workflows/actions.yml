@@ -20,4 +20,4 @@ jobs:
           destination_branch_create: "text/n1"
           user_email: "liranatli@email.com"
           user_name: "liranAtli"
-          commit_message: "A custom message for the commitv2"
+          commit_message: "A custom message for the commitv2 123"
