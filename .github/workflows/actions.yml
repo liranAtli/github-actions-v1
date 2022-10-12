@@ -27,6 +27,8 @@ jobs:
           pwd
           echo ./swagger.json >> openapi.json
           ls -a
+          git config --global user.email "my-liran@bot.com"
+          git config --global user.name "my-liran"
           git add -A
           git commit -m "random file"
           git push
