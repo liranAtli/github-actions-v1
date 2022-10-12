@@ -17,17 +17,19 @@ jobs:
       security-events: write
       statuses: write
     steps:
+      - name: Copy file
+        run: |
+          ./swagger.json >> openapi.json
       - name: Check out my other private repo
         uses: actions/checkout@v3
         with:
           repository: liranAtli/github-actions
           token: ${{ github.token }}
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.id }}
       - name: copy file from current repo
         run: |
-          echo ${{ github.event }}
+          echo ${{ github.event.id }}
           ls -al
-          ../swagger.json >> openapi.json
           git config --global user.email "my-liran@bot.com"
           git config --global user.name "my-liran"
           git add -A
