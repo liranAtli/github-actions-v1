@@ -3,7 +3,7 @@ name: Actions Workflows
 on: [push]
 
 jobs:
-  run-github-actions:
+  run-shell-command:
     runs-on: ubuntu-latest
     steps:
       # - name: Checkout current
