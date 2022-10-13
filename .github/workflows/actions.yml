@@ -34,7 +34,6 @@ jobs:
       - name: PRINT
         run: |
           echo ${{ github.token }}
-          echo ${{API_TOKEN_GITHUB}}
 
 # jobs:
 #   run-github-actions:
