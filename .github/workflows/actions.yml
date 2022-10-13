@@ -17,10 +17,10 @@ jobs:
       security-events: write
       statuses: write
     steps:
-      - name: Checkout current
-        uses: actions/checkout@v3
-        with:
-          path: master
+      # - name: Checkout current
+      #   uses: actions/checkout@v3
+      #   with:
+      #     path: master
 
       - name: Current
         run: |
