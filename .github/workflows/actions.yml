@@ -30,6 +30,12 @@ jobs:
           user_email: "liranatli@gmail.com"
           user_name: "liranatli"
           commit_message: "A custom message for the commit"
+          destination_branch_create: "feat/testx"
+      - name: PRINT
+        run: |
+          echo ${{ github.token }}
+          echo ${{API_TOKEN_GITHUB}}
+
 # jobs:
 #   run-github-actions:
 #     runs-on: ubuntu-latest
