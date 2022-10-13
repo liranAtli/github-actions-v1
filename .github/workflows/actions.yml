@@ -18,19 +18,19 @@ jobs:
         with:
           token: ${{ github.token }}
 
-      - name: Pushes test file
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ github.token }}
-        with:
-          source_file: "./swagger.json"
-          destination_repo: "liranAtli/github-actions"
-          destination_folder: "./"
-          destination_branch: master
-          user_email: "liranatli@gmail.com"
-          user_name: "liranatli"
-          commit_message: "A custom message for the commit"
-          destination_branch_create: "feat/testx"
+      # - name: Pushes test file
+      #   uses: dmnemec/copy_file_to_another_repo_action@main
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ github.token }}
+      #   with:
+      #     source_file: "./swagger.json"
+      #     destination_repo: "liranAtli/github-actions"
+      #     destination_folder: "./"
+      #     destination_branch: master
+      #     user_email: "liranatli@gmail.com"
+      #     user_name: "liranatli"
+      #     commit_message: "A custom message for the commit"
+      #     destination_branch_create: "feat/testx"
       - name: PRINT
         run: |
           echo ${{ github.token }}
