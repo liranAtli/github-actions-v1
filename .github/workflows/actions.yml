@@ -10,52 +10,68 @@ permissions:
   issues: write
 
 jobs:
-  run-github-actions:
+  copy-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout current
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Pushes test file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ github.token }}
         with:
-          path: ./
+          source_file: "./swagger.json"
+          destination_repo: "liranAtli/github-actions"
+          destination_folder: "./"
+          user_email: "liranatli@gmail.com"
+          user_name: "liranatli"
+          commit_message: "A custom message for the commit"
+# jobs:
+#   run-github-actions:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout current
+#         uses: actions/checkout@v3
+#         with:
+#           path: ./
 
-      - name: Checkout remoted
-        uses: actions/checkout@v3
-        with:
-          repository: liranAtli/github-actions
-          path: github-actions     
+#       - name: Checkout remoted
+#         uses: actions/checkout@v3
+#         with:
+#           repository: liranAtli/github-actions
+#           path: github-actions
 
-      - name: Current
-        run: |
-          pwd
-          find ./swagger.json
-          ls -la
+#       - name: Current
+#         run: |
+#           pwd
+#           find ./swagger.json
+#           ls -la
 
-
-
-      # - name: Remoted
-      #   run: |
-      #     pwd
-      #     ls -al
-      # - name: Create curl
-      #   run: |
-      #     curl --request GET \
-      #     --url https://gw.yad2.io/my-ads/api-docs/swagger.json \
-      #     --header 'content-type: application/json' \
-      #     --fail
-      # - name: Check out my other private repo
-      #   uses: actions/checkout@v3
-      #   with:
-      #     repository: liranAtli/github-actions
-      #     token: ${{ github.token }}
-      #     ref: ${{ github.event.id }}
-      # - name: copy file from current repo
-      #   run: |
-      #     echo ${{ github.event.id }}
-      #     ls -al
-      #     git config --global user.email "my-liran@bot.com"
-      #     git config --global user.name "my-liran"
-      #     git add -A
-      #     git commit -m "random file"
-      #     git push
+# - name: Remoted
+#   run: |
+#     pwd
+#     ls -al
+# - name: Create curl
+#   run: |
+#     curl --request GET \
+#     --url https://gw.yad2.io/my-ads/api-docs/swagger.json \
+#     --header 'content-type: application/json' \
+#     --fail
+# - name: Check out my other private repo
+#   uses: actions/checkout@v3
+#   with:
+#     repository: liranAtli/github-actions
+#     token: ${{ github.token }}
+#     ref: ${{ github.event.id }}
+# - name: copy file from current repo
+#   run: |
+#     echo ${{ github.event.id }}
+#     ls -al
+#     git config --global user.email "my-liran@bot.com"
+#     git config --global user.name "my-liran"
+#     git add -A
+#     git commit -m "random file"
+#     git push
 
 # pull created -> pushed to master -> copy file -> checkout to new repo and new branch -> paste the file -> open new issue
