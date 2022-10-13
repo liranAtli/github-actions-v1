@@ -13,10 +13,10 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout current
-      #   uses: actions/checkout@v3
-      #   with:
-      #     path: master
+      - name: Checkout current
+        uses: actions/checkout@v3
+        with:
+          path: master
 
       - name: Current
         run: |
