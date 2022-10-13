@@ -25,7 +25,7 @@ jobs:
       - name: Current
         run: |
           pwd
-          ls -al
+          ls -a
 
       - name: Checkout remoted
         uses: actions/checkout@v3
