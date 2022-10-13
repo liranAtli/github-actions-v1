@@ -24,6 +24,7 @@ jobs:
           source_file: "./swagger.json"
           destination_repo: "liranAtli/github-actions"
           destination_folder: "./"
+          destination_branch: master
           user_email: "liranatli@gmail.com"
           user_name: "liranatli"
           commit_message: "A custom message for the commit"
