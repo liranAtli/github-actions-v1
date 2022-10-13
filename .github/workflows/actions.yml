@@ -20,16 +20,16 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
 
-      - name: Checkout remoted
-        uses: actions/checkout@v3
-        with:
-          repository: liranAtli/github-actions
-          path: github-actions
+      # - name: Checkout remoted
+      #   uses: actions/checkout@v3
+      #   with:
+      #     repository: liranAtli/github-actions
+      #     path: github-actions
 
-      - name: Remoted
-        run: |
-          pwd
-          ls -al
+      # - name: Remoted
+      #   run: |
+      #     pwd
+      #     ls -al
       # - name: Create curl
       #   run: |
       #     curl --request GET \
