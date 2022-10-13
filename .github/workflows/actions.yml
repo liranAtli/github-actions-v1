@@ -15,12 +15,11 @@ jobs:
     steps:
       - name: Checkout current
         uses: actions/checkout@v3
-        with:
-          path: master
 
       - name: Current
         run: |
           pwd
+          find ./swagger.json
           ls -la
 
       # - name: Checkout remoted
