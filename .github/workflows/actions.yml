@@ -1,9 +1,16 @@
 name: Actions Workflows
 
-on: [push]
+on:
+  push:
+    branches:
+      - "master"
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
-  run-shell-command:
+  run-github-actions:
     runs-on: ubuntu-latest
     steps:
       # - name: Checkout current
@@ -14,7 +21,7 @@ jobs:
       - name: Current
         run: |
           pwd
-          ls -al
+          ls
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
